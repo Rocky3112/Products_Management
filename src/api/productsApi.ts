@@ -7,6 +7,7 @@ export interface Product {
   price: number;
   category: string;
   reviews: string[];
+  comment:string[];
 }
 
 interface ProductsResponse {
