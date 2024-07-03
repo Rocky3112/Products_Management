@@ -28,7 +28,7 @@ const ProductList= () => {
 
   return (
     <div>
-      <Table columns={columns} dataSource={data?.products} pagination={false} rowKey="id" />
+      <Table className='list' columns={columns} dataSource={data?.products} pagination={false} rowKey="id" />
       <Pagination
         current={currentPage}
         pageSize={pageSize}

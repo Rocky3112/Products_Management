@@ -1,3 +1,9 @@
+/*navigation bar */
+Link{
+  font-size: 38px;
+}
+
+/* body styles */
 .site-layout-content {
     background: #f7f2f2;
     padding: 24px;
@@ -26,6 +32,12 @@
     margin-top: 20px;
     font-size: 18px;
   }
+
+  /* footer styles */
+  .footer{
+    background-color: #cbd0d4;
+    text-align: center;
+  }
   ul{
     padding-left: 0;
   }
@@ -33,6 +45,15 @@
     list-style:none;
     padding-top: 8px;
     color: darkslategray;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .footer li:hover{
+    text-decoration:1px rgb(12, 121, 176) underline;
+    
+  }
+  .list{
+    margin-bottom: 17px;
   }
   
   

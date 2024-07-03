@@ -4,7 +4,7 @@ import { Layout, Row, Col } from 'antd';
 const { Footer } = Layout;
 const BigFooter: React.FC = () => {
   return (
-    <Footer style={{ backgroundColor: '#c5cfd8',
+    <Footer className='footer' style={{ backgroundColor: '',
      padding: '2rem 3rem' }}>
       <Row gutter={16} justify="center">
         <Col xs={24} sm={12} md={6} className='footer'>
