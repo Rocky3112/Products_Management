@@ -1,13 +1,14 @@
-import React from 'react';
-import { Layout, Row, Col } from 'antd';
+import { Layout, Row, Col } from "antd";
 
 const { Footer } = Layout;
-const BigFooter: React.FC = () => {
+const BigFooter = () => {
   return (
-    <Footer className='footer' style={{ backgroundColor: '',
-     padding: '2rem 3rem' }}>
+    <Footer
+      className="footer"
+      style={{ backgroundColor: "", padding: "2rem 3rem" }}
+    >
       <Row gutter={16} justify="center">
-        <Col xs={24} sm={12} md={6} className='footer'>
+        <Col xs={24} sm={12} md={6} className="footer">
           <h3>Company</h3>
           <ul>
             <li>About Us</li>
@@ -40,8 +41,8 @@ const BigFooter: React.FC = () => {
           </ul>
         </Col>
       </Row>
-      <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-        ©2024 Your Company. All rights reserved. Contact us: contact@yourcompany.com
+      <div style={{ textAlign: "center", marginTop: "2rem" }}>
+        ©2024 Your Company. All rights reserved. Contact us: contact@rocky.com
       </div>
     </Footer>
   );

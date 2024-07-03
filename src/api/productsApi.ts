@@ -1,4 +1,4 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export interface Product {
   id: number;
@@ -17,22 +17,28 @@ interface ProductsResponse {
 }
 
 export const productsApi = createApi({
-  reducerPath: 'productsApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://dummyjson.com/' }),
+  reducerPath: "productsApi",
+  baseQuery: fetchBaseQuery({ baseUrl: "https://dummyjson.com/" }),
   endpoints: (builder) => ({
-    getProducts: builder.query<ProductsResponse, { limit: number; skip: number }>({
+    getProducts: builder.query<
+      ProductsResponse,
+      { limit: number; skip: number }
+    >({
       query: ({ limit, skip }) => `products?limit=${limit}&skip=${skip}`,
     }),
     getProductById: builder.query<Product, number>({
       query: (id) => `products/${id}`,
     }),
     getCategories: builder.query<string[], void>({
-      query: () => 'products/categories',
+      query: () => "products/categories",
     }),
-    updateProduct: builder.mutation<Product, { id: number; data: Partial<Product> }>({
+    updateProduct: builder.mutation<
+      Product,
+      { id: number; data: Partial<Product> }
+    >({
       query: ({ id, data }) => ({
         url: `products/${id}`,
-        method: 'PATCH',
+        method: "PATCH",
         body: data,
       }),
     }),

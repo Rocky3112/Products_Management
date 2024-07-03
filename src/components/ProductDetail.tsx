@@ -1,19 +1,19 @@
-import React from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { useGetProductByIdQuery } from '../api/productsApi';
-import { Button, Card, Descriptions, Typography, Spin } from 'antd';
-import { EditOutlined } from '@ant-design/icons';
-import '../styles/customStyles.css';
+import { useParams, useNavigate } from "react-router-dom";
+import { useGetProductByIdQuery } from "../api/productsApi";
+import { Button, Card, Descriptions, Typography, Spin } from "antd";
+import { EditOutlined } from "@ant-design/icons";
+import "../styles/customStyles.css";
 
 const { Title, Paragraph } = Typography;
 
-const ProductDetail: React.FC = () => {
+const ProductDetail = () => {
   const { id } = useParams<{ id: string }>();
   const { data, error, isLoading } = useGetProductByIdQuery(Number(id));
   const navigate = useNavigate();
 
   if (isLoading) return <Spin size="large" className="loading-spinner" />;
-  if (error) return <div className="error-message">Error loading product details</div>;
+  if (error)
+    return <div className="error-message">Error loading product details</div>;
 
   return (
     <Card
@@ -40,10 +40,14 @@ const ProductDetail: React.FC = () => {
           {data?.reviews?.map((review: any, index: number) => (
             <div key={index}>
               <Paragraph>
-                <strong>{review.reviewerName}</strong> <br /> Email: ({review.reviewerEmail}): <br />
+                <strong>{review.reviewerName}</strong> <br /> Email: (
+                {review.reviewerEmail}): <br />
                 <em>{review.comment}</em>
                 <br />
-                <small>Rating: {review.rating} - Date: {new Date(review.date).toLocaleDateString()}</small>
+                <small>
+                  Rating: {review.rating} - Date:{" "}
+                  {new Date(review.date).toLocaleDateString()}
+                </small>
               </Paragraph>
             </div>
           ))}
